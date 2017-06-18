@@ -1,0 +1,7 @@
+API de Macroplantas
+
+Fazer com que uma semente caia de um mato
+=========================================
+macroplantas.registrar_drop_comum(item, raridade)
+Exemplo: 
+macroplantas.registrar_drop_comum('macroplantas:semente_melancia', 25)
