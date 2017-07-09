@@ -27,19 +27,14 @@ minetest.register_craftitem("macroplantas:pedaco_melancia", {
 	on_use = minetest.item_eat(1),
 })
 
--- Melancias colhidas fora do tempo dropam apenas sementes
-for i = 1, 4 do	
-	minetest.override_item("macroplantas:melancia_"..i, {drop = {
-		max_items = 1,
-		items = {
-			{items = {'macroplantas:seed_melancia'},rarity = 25},
-			{items = {''}},
-		}
-	}})
+-- Colocar sementes nas gramas junto com as outras sementes
+do
+	local drop = minetest.deserialize(minetest.serialize(minetest.registered_nodes["default:grass_1"].drop))
+	table.insert(drop.items, {items={'macroplantas:seed_melancia'}, rarity = 8})
+	for i = 1, 5 do
+		minetest.override_item("default:grass_"..i, {drop = drop})
+	end
 end
-
--- Gerar sementes nos matos
-macroplantas.registrar_drop_comum('macroplantas:seed_melancia', 5)
 
 -- Bloco de Melancia para colheita
 minetest.register_node("macroplantas:node_melancia", {

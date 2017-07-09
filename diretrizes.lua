@@ -9,6 +9,4 @@
 	Diretrizes
   ]]
 
--- Definir um limite de itens que o jogador pode conseguir tirando um mato
-LIMITE_DE_DROP = 1
 

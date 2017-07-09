@@ -28,7 +28,6 @@ macroplantas = {}
 -- Carregar scripts
 notificar("Carregando...")
 dofile(modpath.."/diretrizes.lua")
-dofile(modpath.."/api.lua")
 if MELANCIA == true then
 	dofile(modpath.."/melancia.lua")
 end
