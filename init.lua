@@ -9,9 +9,6 @@
 	Inicializador de scripts
   ]]
 
--- Habilitar Plantas (true = habilitado | false = desabilitado)
-local MELANCIA = true
-local UVA = true
 
 -- Notificador de Inicializador
 local notificar = function(msg)
@@ -20,18 +17,18 @@ local notificar = function(msg)
 	end
 end
 
-local modpath = minetest.get_modpath("macroplantas")
+-- Verifica se mod Farming Redo (TenPlus) está ativo
+if not minetest.registered_craftitems["farming:melon_slice"]
+	or not minetest.registered_craftitems["farming:grapes"]
+then
+	minetest.log("error", "[MacroPlantas] Exigido melon e grapes do mod farming Redo (TenPlus)")
+	return
+end
 
--- Variavel global das funcionalidades
-macroplantas = {}
+local modpath = minetest.get_modpath("macroplantas")
 
 -- Carregar scripts
 notificar("Carregando...")
-dofile(modpath.."/diretrizes.lua")
-if MELANCIA == true then
-	dofile(modpath.."/melancia.lua")
-end
-if UVA == true then
-	dofile(modpath.."/uva.lua")
-end
+dofile(modpath.."/farming.lua")
+dofile(modpath.."/compatibilidade.lua")
 notificar("OK")

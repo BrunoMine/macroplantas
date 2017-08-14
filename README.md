@@ -15,7 +15,7 @@ Plantas diversas para Minetest
 ## Requisitos
 
 * Minetest 0.4.15 ou superior
-* Mod farming
+* Mod Farming Redo (TenPlus)
 
 ## Licença
 Veja LICENSE.txt para informações detalhadas da licença LGPL 3.0
