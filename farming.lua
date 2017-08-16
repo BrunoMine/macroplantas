@@ -45,6 +45,12 @@ for nome,valor in pairs(tb_alimenticios) do
 	minetest.override_item(nome, {on_use = minetest.item_eat(valor[1], valor[2])})
 end
 
+if hbhunger.register_food then
+	for nome,valor in pairs(tb_alimenticios) do
+		hbhunger.register_food(nome, valor[1], valor[2])
+	end
+end
+
 -- Remoção de algumas receitas para desativar
 minetest.clear_craft({output = 'farming:carrot_gold'}) -- Cenoura Dourada
 
