@@ -78,6 +78,3 @@ minetest.register_craft({
 	recipe = "default:papyrus",
 })
 
-minetest.register_on_item_eat(function(hp_change, replace_with_item, itemstack, user, pointed_thing)
-	minetest.chat_send_all(hp_change)
-end)
